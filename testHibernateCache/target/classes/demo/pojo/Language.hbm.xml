@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="demo.pojo">
+ <class dynamic-update="true" name="Language" table="SPOKEN_LANGUAGE">
+  <meta attribute="implement-equals">true</meta>
+  <cache include="all" usage="read-only"/>
+  <id name="id" type="long">
+   <column name="lan_id" not-null="true"/>
+   <generator class="increment"/>
+  </id>
+  <property column="lan_code" generated="never" lazy="false" name="code" type="string"/>
+  <property column="lan_name" generated="never" lazy="false" name="name" type="string"/>
+ </class>
+</hibernate-mapping>
